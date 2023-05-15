@@ -56,7 +56,7 @@ public class ExpenseController {
 	
 	
 	@GetMapping("/update/{id}")
-	public String editPage(@PathVariable("id") Long id, Model model) {
+	public String editPage(@PathVariable("id") Long id, @ModelAttribute("expenseObject") Expense expense,  Model model) {
 		model.addAttribute("expenseObject", services.findExpenseById(id));
 		return "TravelEdit.jsp";
 	}
